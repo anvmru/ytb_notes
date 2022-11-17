@@ -1,0 +1,12 @@
+{
+    "@@locale": "en",
+    "@@last_modified": "2022-09-21T13:19:18+00:00",
+    "appName": "Youtube notes",
+
+    "appTitle": "YtbNotes",
+
+    "trackTitle": "Tracks",
+    "findTitle": "Find track",
+    "editTitle": "Edit track",
+    "settingTitle": "Settings"
+}
