@@ -8,6 +8,8 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../../video_list.dart';
 
 class EditScreen extends StatefulWidget {
+  const EditScreen({super.key});
+
   @override
   State<EditScreen> createState() => _EditScreenState();
 }
@@ -19,6 +21,7 @@ class _EditScreenState extends State<EditScreen> {
 
   late PlayerState _playerState;
   late YoutubeMetaData _videoMetaData;
+
   double _volume = 100;
   bool _muted = false;
   bool _isPlayerReady = false;
@@ -39,7 +42,7 @@ class _EditScreenState extends State<EditScreen> {
       initialVideoId: _ids.first,
       flags: const YoutubePlayerFlags(
         mute: false,
-        autoPlay: true,
+        autoPlay: false, //true,
         disableDragSeek: false,
         loop: false,
         isLive: false,
@@ -81,7 +84,8 @@ class _EditScreenState extends State<EditScreen> {
   Widget build(BuildContext context) {
     return YoutubePlayerBuilder(
       onExitFullScreen: () {
-        // The player forces portraitUp after exiting fullscreen. This overrides the behaviour.
+        // The player forces portraitUp after exiting fullscreen.
+        // This overrides the behaviour.
         SystemChrome.setPreferredOrientations(DeviceOrientation.values);
       },
       player: YoutubePlayer(
@@ -125,23 +129,16 @@ class _EditScreenState extends State<EditScreen> {
         appBar: AppBar(
           leading: Padding(
             padding: const EdgeInsets.only(left: 12.0),
-            child: Image.asset(
-              'assets/ypf.png',
-              fit: BoxFit.fitWidth,
-            ),
+            child: Image.asset('assets/ypf.png', fit: BoxFit.fitWidth),
           ),
-          title: const Text(
-            'Youtube Player Flutter loc',
-            style: TextStyle(color: Colors.white),
-          ),
+          title: const Text('Youtube Player Flutter',
+              style: TextStyle(color: Colors.white)),
           actions: [
             IconButton(
               icon: const Icon(Icons.video_library),
               onPressed: () => Navigator.push(
                 context,
-                CupertinoPageRoute(
-                  builder: (context) => VideoList(),
-                ),
+                CupertinoPageRoute(builder: (context) => VideoList()),
               ),
             ),
           ],
@@ -243,9 +240,7 @@ class _EditScreenState extends State<EditScreen> {
                             : null,
                       ),
                       FullScreenButton(
-                        controller: _controller,
-                        color: Colors.blueAccent,
-                      ),
+                          controller: _controller, color: Colors.blueAccent),
                       IconButton(
                         icon: const Icon(Icons.skip_next),
                         onPressed: _isPlayerReady

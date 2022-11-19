@@ -54,7 +54,7 @@ class AppRouter extends _i7.RootStackRouter {
     EditRoute.name: (routeData) {
       return _i7.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i4.EditScreen(),
+        child: const _i4.EditScreen(),
       );
     },
     SettingRoute.name: (routeData) {
