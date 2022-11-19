@@ -83,7 +83,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-  generate: true
+  #generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -96,8 +96,6 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
   assets:
-    - assets/images/
-    - assets/icons/
     - assets/ypf.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

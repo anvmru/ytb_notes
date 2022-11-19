@@ -2,7 +2,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'player_bloc.freezed.dart';
+part 'player_block.freezed.dart';
 
 @freezed
 class PlayerEvent with _$PlayerEvent {
