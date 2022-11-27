@@ -13,7 +13,7 @@ class BottomNavBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: SizedBox(
-        height: 55.0,
+        height: 56.0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -59,7 +59,8 @@ class BottomBarItem extends StatelessWidget {
             Text(
               title,
               textAlign: TextAlign.center,
-              style: TextStyle(color: isActive ? Colors.black : Colors.grey),
+              style: TextStyle(
+                  color: isActive ? Colors.black : Colors.grey, fontSize: 10),
             ),
             const SizedBox(height: 2.0),
           ],

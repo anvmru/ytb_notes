@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'const.dart';
 import 'generated/locale/l10n.dart';
+import 'src/di/injector_widget.dart';
 import 'src/presenter/theme/theme_app.dart';
 import 'src/routing/routes.gr.dart';
 
@@ -21,26 +22,28 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appRouter = AppRouter();
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      title: 'Youtube Player Flutter',
-      theme: ThemeApp.data,
-      builder: (context, rootWidget) {
-        return rootWidget ??
-            const Center(
-              child: CircularProgressIndicator(),
-            );
-      },
-      onGenerateTitle: _onGenerateTitle,
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      routeInformationParser: appRouter.defaultRouteParser(),
-      routerDelegate: appRouter.delegate(
-        navigatorObservers: () => [AutoRouteObserver()],
+    return InjectorWidget(
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        title: 'Youtube Player Flutter',
+        theme: ThemeApp.data,
+        builder: (context, rootWidget) {
+          return rootWidget ??
+              const Center(
+                child: CircularProgressIndicator(),
+              );
+        },
+        onGenerateTitle: _onGenerateTitle,
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        routeInformationParser: appRouter.defaultRouteParser(),
+        routerDelegate: appRouter.delegate(
+          navigatorObservers: () => [AutoRouteObserver()],
+        ),
       ),
     );
   }
