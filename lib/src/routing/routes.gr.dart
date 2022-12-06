@@ -14,6 +14,8 @@
 import 'package:auto_route/auto_route.dart' as _i7;
 import 'package:flutter/material.dart' as _i8;
 
+import '../domain/blocs/edit_bloc.dart' as _i10;
+import '../domain/blocs/player_block.dart' as _i9;
 import '../presenter/screens/edit_screen.dart' as _i4;
 import '../presenter/screens/find_screen.dart' as _i3;
 import '../presenter/screens/home_screen.dart' as _i2;
@@ -52,9 +54,14 @@ class AppRouter extends _i7.RootStackRouter {
       );
     },
     EditRoute.name: (routeData) {
+      final args = routeData.argsAs<EditRouteArgs>();
       return _i7.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i4.EditScreen(),
+        child: _i4.EditScreen(
+          key: args.key,
+          blocPlay: args.blocPlay,
+          blocEdit: args.blocEdit,
+        ),
       );
     },
     SettingRoute.name: (routeData) {
@@ -169,14 +176,41 @@ class FindRoute extends _i7.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.EditScreen]
-class EditRoute extends _i7.PageRouteInfo<void> {
-  const EditRoute()
-      : super(
+class EditRoute extends _i7.PageRouteInfo<EditRouteArgs> {
+  EditRoute({
+    _i8.Key? key,
+    required _i9.MyPlayerBloc blocPlay,
+    required _i10.EditBloc blocEdit,
+  }) : super(
           EditRoute.name,
           path: 'edit-screen',
+          args: EditRouteArgs(
+            key: key,
+            blocPlay: blocPlay,
+            blocEdit: blocEdit,
+          ),
         );
 
   static const String name = 'EditRoute';
+}
+
+class EditRouteArgs {
+  const EditRouteArgs({
+    this.key,
+    required this.blocPlay,
+    required this.blocEdit,
+  });
+
+  final _i8.Key? key;
+
+  final _i9.MyPlayerBloc blocPlay;
+
+  final _i10.EditBloc blocEdit;
+
+  @override
+  String toString() {
+    return 'EditRouteArgs{key: $key, blocPlay: $blocPlay, blocEdit: $blocEdit}';
+  }
 }
 
 /// generated route for

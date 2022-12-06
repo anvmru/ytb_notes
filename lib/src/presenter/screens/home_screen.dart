@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../generated/locale/l10n.dart';
+import '../../domain/blocs/edit_bloc.dart';
 import '../../domain/blocs/player_block.dart';
 import '../../routing/routes.gr.dart';
 import '../widgets/bottom_nav_bar.dart';
@@ -28,11 +29,14 @@ class _HomeScreenState extends State<HomeScreen> {
         child: AutoTabsScaffold(
           animationDuration: const Duration(microseconds: 0),
           lazyLoad: false,
-          routes: const [
-            EditRoute(),
-            TrackRoute(),
-            FindRoute(),
-            SettingRoute(),
+          routes: [
+            EditRoute(
+              blocPlay: BlocProvider.of<MyPlayerBloc>(context),
+              blocEdit: BlocProvider.of<EditBloc>(context),
+            ),
+            const TrackRoute(),
+            const FindRoute(),
+            const SettingRoute(),
           ],
           extendBody: true,
           builder: (context, child, animation) {

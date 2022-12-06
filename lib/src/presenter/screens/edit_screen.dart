@@ -1,38 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ytb_notes/src/domain/blocs/player_block.dart';
+import 'package:ytb_notes/src/domain/entities/entity_fritter.dart';
+import 'package:ytb_notes/src/domain/entities/entity_synopsis.dart';
 import 'package:ytb_notes/src/presenter/widgets/player_widget.dart';
 
+import '../../domain/blocs/edit_bloc.dart';
+import '../widgets/edit_synopsis_widget.dart';
+
 class EditScreen extends StatefulWidget {
-  const EditScreen({super.key});
+  const EditScreen({super.key, required this.blocPlay, required this.blocEdit});
+
+  final MyPlayerBloc blocPlay;
+  final EditBloc blocEdit;
 
   @override
   State<EditScreen> createState() => _EditScreenState();
 }
 
 class _EditScreenState extends State<EditScreen> {
-  late final MyPlayerBloc bloc;
+  MyPlayerBloc get blocPlay => widget.blocPlay;
 
-  @override
-  void didChangeDependencies() {
-    bloc = BlocProvider.of<MyPlayerBloc>(context);
-    super.didChangeDependencies();
-  }
+  EditBloc get blocEdit => widget.blocEdit;
 
   Widget icon = const Icon(Icons.pause);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          PlayerWidget(bloc: bloc),
-          const SizedBox(height: 10),
-          const Text("Здесь будет список"),
-        ],
+      body: BlocConsumer<EditBloc, EditState>(
+        listener: (context, state) {
+          // TODO: implement listener
+        },
+        builder: (context, state) {
+          return Column(
+            children: [
+              PlayerWidget(bloc: blocPlay),
+              const SizedBox(height: 10),
+              const SizedBox(height: 10),
+              EditSynopsysWidget(
+                synopsys: EntitySynopsys(id: 's1', fritters: [
+                  EntityFritter(id: 'f1'),
+                  EntityFritter(id: 'f2'),
+                  EntityFritter(id: 'f3'),
+                  EntityFritter(id: 'f4'),
+                ]),
+              ),
+            ],
+          );
+        },
       ),
       floatingActionButton: BlocListener<MyPlayerBloc, MyPlayerState>(
-        bloc: bloc,
+        bloc: blocPlay,
         listener: (_, state) {
           if (state is ToggleState) {
             setState(() {
@@ -45,7 +64,7 @@ class _EditScreenState extends State<EditScreen> {
           }
         },
         child: FloatingActionButton(
-          onPressed: () => bloc.add(const MyPlayerEvent.toggle()),
+          onPressed: () => blocPlay.add(const MyPlayerEvent.toggle()),
           child: icon,
         ),
       ),
