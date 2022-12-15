@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'edit_bloc.dart';
 
@@ -438,19 +438,19 @@ mixin _$EditState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(EntitySynopsys synopsys) ready,
+    required TResult Function(EntitySynopsys synopsys, int? index) ready,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
-    TResult? Function(EntitySynopsys synopsys)? ready,
+    TResult? Function(EntitySynopsys synopsys, int? index)? ready,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(EntitySynopsys synopsys)? ready,
+    TResult Function(EntitySynopsys synopsys, int? index)? ready,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -531,7 +531,7 @@ class _$InitState implements InitState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(EntitySynopsys synopsys) ready,
+    required TResult Function(EntitySynopsys synopsys, int? index) ready,
   }) {
     return init();
   }
@@ -540,7 +540,7 @@ class _$InitState implements InitState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
-    TResult? Function(EntitySynopsys synopsys)? ready,
+    TResult? Function(EntitySynopsys synopsys, int? index)? ready,
   }) {
     return init?.call();
   }
@@ -549,7 +549,7 @@ class _$InitState implements InitState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(EntitySynopsys synopsys)? ready,
+    TResult Function(EntitySynopsys synopsys, int? index)? ready,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -600,7 +600,7 @@ abstract class _$$ReadyStateCopyWith<$Res> {
           _$ReadyState value, $Res Function(_$ReadyState) then) =
       __$$ReadyStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({EntitySynopsys synopsys});
+  $Res call({EntitySynopsys synopsys, int? index});
 }
 
 /// @nodoc
@@ -615,12 +615,17 @@ class __$$ReadyStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? synopsys = null,
+    Object? index = freezed,
   }) {
     return _then(_$ReadyState(
       null == synopsys
           ? _value.synopsys
           : synopsys // ignore: cast_nullable_to_non_nullable
               as EntitySynopsys,
+      freezed == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -628,14 +633,16 @@ class __$$ReadyStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ReadyState implements ReadyState {
-  const _$ReadyState(this.synopsys);
+  const _$ReadyState(this.synopsys, this.index);
 
   @override
   final EntitySynopsys synopsys;
+  @override
+  final int? index;
 
   @override
   String toString() {
-    return 'EditState.ready(synopsys: $synopsys)';
+    return 'EditState.ready(synopsys: $synopsys, index: $index)';
   }
 
   @override
@@ -644,11 +651,12 @@ class _$ReadyState implements ReadyState {
         (other.runtimeType == runtimeType &&
             other is _$ReadyState &&
             (identical(other.synopsys, synopsys) ||
-                other.synopsys == synopsys));
+                other.synopsys == synopsys) &&
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, synopsys);
+  int get hashCode => Object.hash(runtimeType, synopsys, index);
 
   @JsonKey(ignore: true)
   @override
@@ -660,29 +668,29 @@ class _$ReadyState implements ReadyState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(EntitySynopsys synopsys) ready,
+    required TResult Function(EntitySynopsys synopsys, int? index) ready,
   }) {
-    return ready(synopsys);
+    return ready(synopsys, index);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
-    TResult? Function(EntitySynopsys synopsys)? ready,
+    TResult? Function(EntitySynopsys synopsys, int? index)? ready,
   }) {
-    return ready?.call(synopsys);
+    return ready?.call(synopsys, index);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(EntitySynopsys synopsys)? ready,
+    TResult Function(EntitySynopsys synopsys, int? index)? ready,
     required TResult orElse(),
   }) {
     if (ready != null) {
-      return ready(synopsys);
+      return ready(synopsys, index);
     }
     return orElse();
   }
@@ -720,9 +728,11 @@ class _$ReadyState implements ReadyState {
 }
 
 abstract class ReadyState implements EditState {
-  const factory ReadyState(final EntitySynopsys synopsys) = _$ReadyState;
+  const factory ReadyState(final EntitySynopsys synopsys, final int? index) =
+      _$ReadyState;
 
   EntitySynopsys get synopsys;
+  int? get index;
   @JsonKey(ignore: true)
   _$$ReadyStateCopyWith<_$ReadyState> get copyWith =>
       throw _privateConstructorUsedError;

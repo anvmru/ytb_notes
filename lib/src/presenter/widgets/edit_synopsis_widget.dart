@@ -13,7 +13,7 @@ class EditSynopsysWidget extends StatelessWidget {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-          //color: Colors.grey.withOpacity(0.5),
+          color: Colors.yellow.withOpacity(0.3),
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: Colors.grey, width: 1),
         ),

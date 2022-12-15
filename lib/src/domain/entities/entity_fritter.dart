@@ -2,7 +2,8 @@
 ///
 class EntityFritter {
   EntityFritter({
-    required this.id,
+    this.id,
+    this.videoId,
     this.begin = 0,
     this.length = 0,
     this.index = 0,
@@ -10,7 +11,10 @@ class EntityFritter {
   });
 
   // Ключ фрагмента
-  final String id;
+  String? id;
+
+  // Ссылка на видео
+  String? videoId;
 
   // Начало
   int begin;

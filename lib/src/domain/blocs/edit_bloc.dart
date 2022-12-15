@@ -17,7 +17,8 @@ class EditEvent with _$EditEvent {
 @freezed
 class EditState with _$EditState {
   const factory EditState.init() = InitState;
-  const factory EditState.ready(EntitySynopsys synopsys) = ReadyState;
+  const factory EditState.ready(EntitySynopsys synopsys, int? index) =
+      ReadyState;
 }
 
 class EditBloc extends Bloc<EditEvent, EditState> {
@@ -27,22 +28,32 @@ class EditBloc extends Bloc<EditEvent, EditState> {
     on<AddEvent>(_onAddEvent);
   }
 
-  EntitySynopsys _synopsys = EntitySynopsys(id: '');
+  EntitySynopsys _synopsys = EntitySynopsys(id: '*');
+  int? _index;
+
+  //static const String _videoId = "https://www.youtube.com/watch?v=7qrQP2B10iw";
 
   FutureOr<void> _onInitEvent(InitEvent event, Emitter<EditState> emit) {
-    _synopsys = EntitySynopsys(id: '1', name: "Test 1", fritters: [
-      EntityFritter(id: "1", begin: 0),
-      EntityFritter(id: "2", begin: 100),
-      EntityFritter(id: "3", begin: 200),
+    _synopsys =
+        EntitySynopsys(id: '1', name: "Test 1 - Уральские пельмени", fritters: [
+      // EntityFritter(id: "1", begin: 0, videoId: _videoId),
+      // EntityFritter(id: "2", begin: 100, videoId: _videoId),
+      // EntityFritter(id: "3", begin: 200, videoId: _videoId),
     ]);
+    if (_synopsys.fritters.isNotEmpty) {
+      _index = 0;
+    } else {
+      _index = null;
+    }
+    emit.call(EditState.ready(_synopsys, _index));
   }
 
   FutureOr<void> _onLoadEvent(LoadEvent event, Emitter<EditState> emit) {
-    emit.call(EditState.ready(_synopsys));
+    emit.call(EditState.ready(_synopsys, _index));
   }
 
   FutureOr<void> _onAddEvent(AddEvent event, Emitter<EditState> emit) {
     _synopsys.fritters.add(event.fritter);
-    emit.call(EditState.ready(_synopsys));
+    emit.call(EditState.ready(_synopsys, _index));
   }
 }

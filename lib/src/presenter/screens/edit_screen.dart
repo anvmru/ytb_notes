@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ytb_notes/src/domain/blocs/player_block.dart';
 import 'package:ytb_notes/src/domain/entities/entity_fritter.dart';
-import 'package:ytb_notes/src/domain/entities/entity_synopsis.dart';
 import 'package:ytb_notes/src/presenter/widgets/player_widget.dart';
 
 import '../../domain/blocs/edit_bloc.dart';
@@ -26,47 +25,73 @@ class _EditScreenState extends State<EditScreen> {
   Widget icon = const Icon(Icons.pause);
 
   @override
+  void initState() {
+    super.initState();
+    // начальная загрузка конспекта
+    blocEdit.add(const EditEvent.init());
+  }
+
+  // Обработка событий плеера
+  void _listenerPlay(BuildContext context, MyPlayerState statePlay) {
+    if (statePlay is ToggleState) {
+      setState(() {
+        if (statePlay.playOn) {
+          icon = const Icon(Icons.pause);
+        } else {
+          icon = const Icon(Icons.play_arrow);
+          blocEdit.add(EditEvent.add(EntityFritter()));
+        }
+      });
+    }
+  }
+
+  // Обработка событий редактора
+  void _listenerEdit(BuildContext context, EditState state) {
+    if (state is ReadyState && state.index != null) {
+      // загрузка первого фрагмента в плеер (если он есть)
+      final vId = state.synopsys.fritters[state.index!].videoId;
+      if (vId != null) blocPlay.add(MyPlayerEvent.load(vId));
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocConsumer<EditBloc, EditState>(
-        listener: (context, state) {
-          // TODO: implement listener
-        },
-        builder: (context, state) {
-          return Column(
-            children: [
-              PlayerWidget(bloc: blocPlay),
-              const SizedBox(height: 10),
-              const SizedBox(height: 10),
-              EditSynopsysWidget(
-                synopsys: EntitySynopsys(id: 's1', fritters: [
-                  EntityFritter(id: 'f1'),
-                  EntityFritter(id: 'f2'),
-                  EntityFritter(id: 'f3'),
-                  EntityFritter(id: 'f4'),
-                ]),
-              ),
-            ],
+      body: BlocConsumer<MyPlayerBloc, MyPlayerState>(
+        bloc: blocPlay,
+        listener: _listenerPlay,
+        builder: (context, statePlay) {
+          return BlocConsumer<EditBloc, EditState>(
+            listener: _listenerEdit,
+            builder: (context, stateEdit) {
+              if (!(stateEdit is ReadyState)) {
+                // пока фрагмент не готов - ждем
+                return const Center(child: CircularProgressIndicator());
+              } else {
+                return Column(
+                  children: [
+                    // Плеер
+                    PlayerWidget(bloc: blocPlay),
+                    const SizedBox(height: 10),
+                    // Заголовок
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text(stateEdit.synopsys.name),
+                    ),
+                    const SizedBox(height: 10),
+                    // Список фрагментов загруженного конспекта
+                    EditSynopsysWidget(synopsys: stateEdit.synopsys),
+                  ],
+                );
+              }
+            },
           );
         },
       ),
-      floatingActionButton: BlocListener<MyPlayerBloc, MyPlayerState>(
-        bloc: blocPlay,
-        listener: (_, state) {
-          if (state is ToggleState) {
-            setState(() {
-              if (state.plaing) {
-                icon = const Icon(Icons.pause);
-              } else {
-                icon = const Icon(Icons.play_arrow);
-              }
-            });
-          }
-        },
-        child: FloatingActionButton(
-          onPressed: () => blocPlay.add(const MyPlayerEvent.toggle()),
-          child: icon,
-        ),
+      floatingActionButton: FloatingActionButton(
+        // при нажатии - отправляем старт\стоп
+        onPressed: () => blocPlay.add(const MyPlayerEvent.toggle()),
+        child: icon,
       ),
     );
   }
