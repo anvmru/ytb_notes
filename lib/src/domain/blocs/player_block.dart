@@ -24,6 +24,7 @@ class MyPlayerState with _$MyPlayerState {
       InitState;
   const factory MyPlayerState.toggle(bool playOn) = ToggleState;
   const factory MyPlayerState.refresh() = RefreshState;
+  const factory MyPlayerState.ready() = ReadyPlayerState;
 }
 
 class MyPlayerBloc extends Bloc<MyPlayerEvent, MyPlayerState> {
@@ -108,10 +109,12 @@ class MyPlayerBloc extends Bloc<MyPlayerEvent, MyPlayerState> {
     } else {
       _onStartEvent(const StartEvent(), emit);
     }
+    emit.call(MyPlayerState.toggle(_playOn));
   }
 
   Future<void> _onReadyEvent(
       ReadyEvent event, Emitter<MyPlayerState> emit) async {
     _isPlayerReady = true;
+    emit.call(const MyPlayerState.ready());
   }
 }

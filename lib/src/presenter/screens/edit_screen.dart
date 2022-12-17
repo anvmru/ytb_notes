@@ -23,6 +23,7 @@ class _EditScreenState extends State<EditScreen> {
   EditBloc get blocEdit => widget.blocEdit;
 
   Widget icon = const Icon(Icons.pause);
+  bool _readyPlayer = false;
 
   @override
   void initState() {
@@ -33,6 +34,11 @@ class _EditScreenState extends State<EditScreen> {
 
   // Обработка событий плеера
   void _listenerPlay(BuildContext context, MyPlayerState statePlay) {
+    if (statePlay is ReadyPlayerState) {
+      setState(() {
+        _readyPlayer = true;
+      });
+    }
     if (statePlay is ToggleState) {
       setState(() {
         if (statePlay.playOn) {
@@ -88,11 +94,13 @@ class _EditScreenState extends State<EditScreen> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        // при нажатии - отправляем старт\стоп
-        onPressed: () => blocPlay.add(const MyPlayerEvent.toggle()),
-        child: icon,
-      ),
+      floatingActionButton: !_readyPlayer
+          ? null
+          : FloatingActionButton(
+              // при нажатии - отправляем старт\стоп
+              onPressed: () => blocPlay.add(const MyPlayerEvent.toggle()),
+              child: icon,
+            ),
     );
   }
 }

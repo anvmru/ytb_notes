@@ -934,6 +934,7 @@ mixin _$MyPlayerState {
     required TResult Function(YoutubePlayerController controller) init,
     required TResult Function(bool playOn) toggle,
     required TResult Function() refresh,
+    required TResult Function() ready,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -942,6 +943,7 @@ mixin _$MyPlayerState {
     TResult? Function(YoutubePlayerController controller)? init,
     TResult? Function(bool playOn)? toggle,
     TResult? Function()? refresh,
+    TResult? Function()? ready,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -950,6 +952,7 @@ mixin _$MyPlayerState {
     TResult Function(YoutubePlayerController controller)? init,
     TResult Function(bool playOn)? toggle,
     TResult Function()? refresh,
+    TResult Function()? ready,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -959,6 +962,7 @@ mixin _$MyPlayerState {
     required TResult Function(InitState value) init,
     required TResult Function(ToggleState value) toggle,
     required TResult Function(RefreshState value) refresh,
+    required TResult Function(ReadyPlayerState value) ready,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -967,6 +971,7 @@ mixin _$MyPlayerState {
     TResult? Function(InitState value)? init,
     TResult? Function(ToggleState value)? toggle,
     TResult? Function(RefreshState value)? refresh,
+    TResult? Function(ReadyPlayerState value)? ready,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -975,6 +980,7 @@ mixin _$MyPlayerState {
     TResult Function(InitState value)? init,
     TResult Function(ToggleState value)? toggle,
     TResult Function(RefreshState value)? refresh,
+    TResult Function(ReadyPlayerState value)? ready,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1039,6 +1045,7 @@ class _$DefState implements DefState {
     required TResult Function(YoutubePlayerController controller) init,
     required TResult Function(bool playOn) toggle,
     required TResult Function() refresh,
+    required TResult Function() ready,
   }) {
     return def();
   }
@@ -1050,6 +1057,7 @@ class _$DefState implements DefState {
     TResult? Function(YoutubePlayerController controller)? init,
     TResult? Function(bool playOn)? toggle,
     TResult? Function()? refresh,
+    TResult? Function()? ready,
   }) {
     return def?.call();
   }
@@ -1061,6 +1069,7 @@ class _$DefState implements DefState {
     TResult Function(YoutubePlayerController controller)? init,
     TResult Function(bool playOn)? toggle,
     TResult Function()? refresh,
+    TResult Function()? ready,
     required TResult orElse(),
   }) {
     if (def != null) {
@@ -1076,6 +1085,7 @@ class _$DefState implements DefState {
     required TResult Function(InitState value) init,
     required TResult Function(ToggleState value) toggle,
     required TResult Function(RefreshState value) refresh,
+    required TResult Function(ReadyPlayerState value) ready,
   }) {
     return def(this);
   }
@@ -1087,6 +1097,7 @@ class _$DefState implements DefState {
     TResult? Function(InitState value)? init,
     TResult? Function(ToggleState value)? toggle,
     TResult? Function(RefreshState value)? refresh,
+    TResult? Function(ReadyPlayerState value)? ready,
   }) {
     return def?.call(this);
   }
@@ -1098,6 +1109,7 @@ class _$DefState implements DefState {
     TResult Function(InitState value)? init,
     TResult Function(ToggleState value)? toggle,
     TResult Function(RefreshState value)? refresh,
+    TResult Function(ReadyPlayerState value)? ready,
     required TResult orElse(),
   }) {
     if (def != null) {
@@ -1180,6 +1192,7 @@ class _$InitState implements InitState {
     required TResult Function(YoutubePlayerController controller) init,
     required TResult Function(bool playOn) toggle,
     required TResult Function() refresh,
+    required TResult Function() ready,
   }) {
     return init(controller);
   }
@@ -1191,6 +1204,7 @@ class _$InitState implements InitState {
     TResult? Function(YoutubePlayerController controller)? init,
     TResult? Function(bool playOn)? toggle,
     TResult? Function()? refresh,
+    TResult? Function()? ready,
   }) {
     return init?.call(controller);
   }
@@ -1202,6 +1216,7 @@ class _$InitState implements InitState {
     TResult Function(YoutubePlayerController controller)? init,
     TResult Function(bool playOn)? toggle,
     TResult Function()? refresh,
+    TResult Function()? ready,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -1217,6 +1232,7 @@ class _$InitState implements InitState {
     required TResult Function(InitState value) init,
     required TResult Function(ToggleState value) toggle,
     required TResult Function(RefreshState value) refresh,
+    required TResult Function(ReadyPlayerState value) ready,
   }) {
     return init(this);
   }
@@ -1228,6 +1244,7 @@ class _$InitState implements InitState {
     TResult? Function(InitState value)? init,
     TResult? Function(ToggleState value)? toggle,
     TResult? Function(RefreshState value)? refresh,
+    TResult? Function(ReadyPlayerState value)? ready,
   }) {
     return init?.call(this);
   }
@@ -1239,6 +1256,7 @@ class _$InitState implements InitState {
     TResult Function(InitState value)? init,
     TResult Function(ToggleState value)? toggle,
     TResult Function(RefreshState value)? refresh,
+    TResult Function(ReadyPlayerState value)? ready,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -1326,6 +1344,7 @@ class _$ToggleState implements ToggleState {
     required TResult Function(YoutubePlayerController controller) init,
     required TResult Function(bool playOn) toggle,
     required TResult Function() refresh,
+    required TResult Function() ready,
   }) {
     return toggle(playOn);
   }
@@ -1337,6 +1356,7 @@ class _$ToggleState implements ToggleState {
     TResult? Function(YoutubePlayerController controller)? init,
     TResult? Function(bool playOn)? toggle,
     TResult? Function()? refresh,
+    TResult? Function()? ready,
   }) {
     return toggle?.call(playOn);
   }
@@ -1348,6 +1368,7 @@ class _$ToggleState implements ToggleState {
     TResult Function(YoutubePlayerController controller)? init,
     TResult Function(bool playOn)? toggle,
     TResult Function()? refresh,
+    TResult Function()? ready,
     required TResult orElse(),
   }) {
     if (toggle != null) {
@@ -1363,6 +1384,7 @@ class _$ToggleState implements ToggleState {
     required TResult Function(InitState value) init,
     required TResult Function(ToggleState value) toggle,
     required TResult Function(RefreshState value) refresh,
+    required TResult Function(ReadyPlayerState value) ready,
   }) {
     return toggle(this);
   }
@@ -1374,6 +1396,7 @@ class _$ToggleState implements ToggleState {
     TResult? Function(InitState value)? init,
     TResult? Function(ToggleState value)? toggle,
     TResult? Function(RefreshState value)? refresh,
+    TResult? Function(ReadyPlayerState value)? ready,
   }) {
     return toggle?.call(this);
   }
@@ -1385,6 +1408,7 @@ class _$ToggleState implements ToggleState {
     TResult Function(InitState value)? init,
     TResult Function(ToggleState value)? toggle,
     TResult Function(RefreshState value)? refresh,
+    TResult Function(ReadyPlayerState value)? ready,
     required TResult orElse(),
   }) {
     if (toggle != null) {
@@ -1445,6 +1469,7 @@ class _$RefreshState implements RefreshState {
     required TResult Function(YoutubePlayerController controller) init,
     required TResult Function(bool playOn) toggle,
     required TResult Function() refresh,
+    required TResult Function() ready,
   }) {
     return refresh();
   }
@@ -1456,6 +1481,7 @@ class _$RefreshState implements RefreshState {
     TResult? Function(YoutubePlayerController controller)? init,
     TResult? Function(bool playOn)? toggle,
     TResult? Function()? refresh,
+    TResult? Function()? ready,
   }) {
     return refresh?.call();
   }
@@ -1467,6 +1493,7 @@ class _$RefreshState implements RefreshState {
     TResult Function(YoutubePlayerController controller)? init,
     TResult Function(bool playOn)? toggle,
     TResult Function()? refresh,
+    TResult Function()? ready,
     required TResult orElse(),
   }) {
     if (refresh != null) {
@@ -1482,6 +1509,7 @@ class _$RefreshState implements RefreshState {
     required TResult Function(InitState value) init,
     required TResult Function(ToggleState value) toggle,
     required TResult Function(RefreshState value) refresh,
+    required TResult Function(ReadyPlayerState value) ready,
   }) {
     return refresh(this);
   }
@@ -1493,6 +1521,7 @@ class _$RefreshState implements RefreshState {
     TResult? Function(InitState value)? init,
     TResult? Function(ToggleState value)? toggle,
     TResult? Function(RefreshState value)? refresh,
+    TResult? Function(ReadyPlayerState value)? ready,
   }) {
     return refresh?.call(this);
   }
@@ -1504,6 +1533,7 @@ class _$RefreshState implements RefreshState {
     TResult Function(InitState value)? init,
     TResult Function(ToggleState value)? toggle,
     TResult Function(RefreshState value)? refresh,
+    TResult Function(ReadyPlayerState value)? ready,
     required TResult orElse(),
   }) {
     if (refresh != null) {
@@ -1515,4 +1545,124 @@ class _$RefreshState implements RefreshState {
 
 abstract class RefreshState implements MyPlayerState {
   const factory RefreshState() = _$RefreshState;
+}
+
+/// @nodoc
+abstract class _$$ReadyPlayerStateCopyWith<$Res> {
+  factory _$$ReadyPlayerStateCopyWith(
+          _$ReadyPlayerState value, $Res Function(_$ReadyPlayerState) then) =
+      __$$ReadyPlayerStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ReadyPlayerStateCopyWithImpl<$Res>
+    extends _$MyPlayerStateCopyWithImpl<$Res, _$ReadyPlayerState>
+    implements _$$ReadyPlayerStateCopyWith<$Res> {
+  __$$ReadyPlayerStateCopyWithImpl(
+      _$ReadyPlayerState _value, $Res Function(_$ReadyPlayerState) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ReadyPlayerState implements ReadyPlayerState {
+  const _$ReadyPlayerState();
+
+  @override
+  String toString() {
+    return 'MyPlayerState.ready()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ReadyPlayerState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() def,
+    required TResult Function(YoutubePlayerController controller) init,
+    required TResult Function(bool playOn) toggle,
+    required TResult Function() refresh,
+    required TResult Function() ready,
+  }) {
+    return ready();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? def,
+    TResult? Function(YoutubePlayerController controller)? init,
+    TResult? Function(bool playOn)? toggle,
+    TResult? Function()? refresh,
+    TResult? Function()? ready,
+  }) {
+    return ready?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? def,
+    TResult Function(YoutubePlayerController controller)? init,
+    TResult Function(bool playOn)? toggle,
+    TResult Function()? refresh,
+    TResult Function()? ready,
+    required TResult orElse(),
+  }) {
+    if (ready != null) {
+      return ready();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DefState value) def,
+    required TResult Function(InitState value) init,
+    required TResult Function(ToggleState value) toggle,
+    required TResult Function(RefreshState value) refresh,
+    required TResult Function(ReadyPlayerState value) ready,
+  }) {
+    return ready(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DefState value)? def,
+    TResult? Function(InitState value)? init,
+    TResult? Function(ToggleState value)? toggle,
+    TResult? Function(RefreshState value)? refresh,
+    TResult? Function(ReadyPlayerState value)? ready,
+  }) {
+    return ready?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DefState value)? def,
+    TResult Function(InitState value)? init,
+    TResult Function(ToggleState value)? toggle,
+    TResult Function(RefreshState value)? refresh,
+    TResult Function(ReadyPlayerState value)? ready,
+    required TResult orElse(),
+  }) {
+    if (ready != null) {
+      return ready(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReadyPlayerState implements MyPlayerState {
+  const factory ReadyPlayerState() = _$ReadyPlayerState;
 }
