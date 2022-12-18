@@ -94,6 +94,7 @@ class _EditScreenState extends State<EditScreen> {
           );
         },
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: !_readyPlayer
           ? null
           : FloatingActionButton(

@@ -38,14 +38,21 @@ class _Line extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
+      height: 80,
       decoration: BoxDecoration(
         border: Border(
             bottom: BorderSide(color: Colors.grey.withOpacity(0.5), width: 1)),
       ),
       child: Row(
         children: [
-          Text("Начало: ${fritter.begin.toString()}"),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Начало: ${fritter.begin.toString()}"),
+              Text("Примечание"),
+            ],
+          ),
           const Expanded(child: SizedBox(width: 10)),
           const Icon(Icons.menu),
         ],

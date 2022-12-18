@@ -117,7 +117,7 @@ class MyPlayerBloc extends Bloc<MyPlayerEvent, MyPlayerState> {
   Future<void> _onStartEvent(
       StartEvent event, Emitter<MyPlayerState> emit) async {
     if (_isPlayerReady && !_playOn) {
-      _playOn = true;
+//      _playOn = true;
       _controller?.play();
     }
   }
@@ -125,7 +125,7 @@ class MyPlayerBloc extends Bloc<MyPlayerEvent, MyPlayerState> {
   Future<void> _onStopEvent(
       StopEvent event, Emitter<MyPlayerState> emit) async {
     if (_isPlayerReady && _playOn) {
-      _playOn = false;
+//      _playOn = false;
       _controller?.pause();
     }
   }
