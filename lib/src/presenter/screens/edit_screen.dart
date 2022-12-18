@@ -33,19 +33,19 @@ class _EditScreenState extends State<EditScreen> {
   }
 
   // Обработка событий плеера
-  void _listenerPlay(BuildContext context, MyPlayerState statePlay) {
-    if (statePlay is ReadyPlayerState) {
+  void _listenerPlay(BuildContext context, MyPlayerState state) {
+    if (state is ReadyPlayerState) {
       setState(() {
         _readyPlayer = true;
       });
     }
-    if (statePlay is ToggleState) {
+    if (state is RefreshState) {
       setState(() {
-        if (statePlay.playOn) {
+        if (state.playOn) {
           icon = const Icon(Icons.pause);
         } else {
           icon = const Icon(Icons.play_arrow);
-          blocEdit.add(EditEvent.add(EntityFritter()));
+          blocEdit.add(EditEvent.add(EntityFritter(begin: state.position)));
         }
       });
     }

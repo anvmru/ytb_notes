@@ -24,6 +24,7 @@ mixin _$MyPlayerEvent {
     required TResult Function() stop,
     required TResult Function() toggle,
     required TResult Function() ready,
+    required TResult Function() refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$MyPlayerEvent {
     TResult? Function()? stop,
     TResult? Function()? toggle,
     TResult? Function()? ready,
+    TResult? Function()? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$MyPlayerEvent {
     TResult Function()? stop,
     TResult Function()? toggle,
     TResult Function()? ready,
+    TResult Function()? refresh,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +58,7 @@ mixin _$MyPlayerEvent {
     required TResult Function(StopEvent value) stop,
     required TResult Function(ToggleEvent value) toggle,
     required TResult Function(ReadyEvent value) ready,
+    required TResult Function(RefreshEvent value) refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +69,7 @@ mixin _$MyPlayerEvent {
     TResult? Function(StopEvent value)? stop,
     TResult? Function(ToggleEvent value)? toggle,
     TResult? Function(ReadyEvent value)? ready,
+    TResult? Function(RefreshEvent value)? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +80,7 @@ mixin _$MyPlayerEvent {
     TResult Function(StopEvent value)? stop,
     TResult Function(ToggleEvent value)? toggle,
     TResult Function(ReadyEvent value)? ready,
+    TResult Function(RefreshEvent value)? refresh,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -176,6 +182,7 @@ class _$InitEvent implements InitEvent {
     required TResult Function() stop,
     required TResult Function() toggle,
     required TResult Function() ready,
+    required TResult Function() refresh,
   }) {
     return init(videoId, playOn);
   }
@@ -189,6 +196,7 @@ class _$InitEvent implements InitEvent {
     TResult? Function()? stop,
     TResult? Function()? toggle,
     TResult? Function()? ready,
+    TResult? Function()? refresh,
   }) {
     return init?.call(videoId, playOn);
   }
@@ -202,6 +210,7 @@ class _$InitEvent implements InitEvent {
     TResult Function()? stop,
     TResult Function()? toggle,
     TResult Function()? ready,
+    TResult Function()? refresh,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -219,6 +228,7 @@ class _$InitEvent implements InitEvent {
     required TResult Function(StopEvent value) stop,
     required TResult Function(ToggleEvent value) toggle,
     required TResult Function(ReadyEvent value) ready,
+    required TResult Function(RefreshEvent value) refresh,
   }) {
     return init(this);
   }
@@ -232,6 +242,7 @@ class _$InitEvent implements InitEvent {
     TResult? Function(StopEvent value)? stop,
     TResult? Function(ToggleEvent value)? toggle,
     TResult? Function(ReadyEvent value)? ready,
+    TResult? Function(RefreshEvent value)? refresh,
   }) {
     return init?.call(this);
   }
@@ -245,6 +256,7 @@ class _$InitEvent implements InitEvent {
     TResult Function(StopEvent value)? stop,
     TResult Function(ToggleEvent value)? toggle,
     TResult Function(ReadyEvent value)? ready,
+    TResult Function(RefreshEvent value)? refresh,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -335,6 +347,7 @@ class _$LoadEvent implements LoadEvent {
     required TResult Function() stop,
     required TResult Function() toggle,
     required TResult Function() ready,
+    required TResult Function() refresh,
   }) {
     return load(videoId);
   }
@@ -348,6 +361,7 @@ class _$LoadEvent implements LoadEvent {
     TResult? Function()? stop,
     TResult? Function()? toggle,
     TResult? Function()? ready,
+    TResult? Function()? refresh,
   }) {
     return load?.call(videoId);
   }
@@ -361,6 +375,7 @@ class _$LoadEvent implements LoadEvent {
     TResult Function()? stop,
     TResult Function()? toggle,
     TResult Function()? ready,
+    TResult Function()? refresh,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -378,6 +393,7 @@ class _$LoadEvent implements LoadEvent {
     required TResult Function(StopEvent value) stop,
     required TResult Function(ToggleEvent value) toggle,
     required TResult Function(ReadyEvent value) ready,
+    required TResult Function(RefreshEvent value) refresh,
   }) {
     return load(this);
   }
@@ -391,6 +407,7 @@ class _$LoadEvent implements LoadEvent {
     TResult? Function(StopEvent value)? stop,
     TResult? Function(ToggleEvent value)? toggle,
     TResult? Function(ReadyEvent value)? ready,
+    TResult? Function(RefreshEvent value)? refresh,
   }) {
     return load?.call(this);
   }
@@ -404,6 +421,7 @@ class _$LoadEvent implements LoadEvent {
     TResult Function(StopEvent value)? stop,
     TResult Function(ToggleEvent value)? toggle,
     TResult Function(ReadyEvent value)? ready,
+    TResult Function(RefreshEvent value)? refresh,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -466,6 +484,7 @@ class _$StartEvent implements StartEvent {
     required TResult Function() stop,
     required TResult Function() toggle,
     required TResult Function() ready,
+    required TResult Function() refresh,
   }) {
     return start();
   }
@@ -479,6 +498,7 @@ class _$StartEvent implements StartEvent {
     TResult? Function()? stop,
     TResult? Function()? toggle,
     TResult? Function()? ready,
+    TResult? Function()? refresh,
   }) {
     return start?.call();
   }
@@ -492,6 +512,7 @@ class _$StartEvent implements StartEvent {
     TResult Function()? stop,
     TResult Function()? toggle,
     TResult Function()? ready,
+    TResult Function()? refresh,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -509,6 +530,7 @@ class _$StartEvent implements StartEvent {
     required TResult Function(StopEvent value) stop,
     required TResult Function(ToggleEvent value) toggle,
     required TResult Function(ReadyEvent value) ready,
+    required TResult Function(RefreshEvent value) refresh,
   }) {
     return start(this);
   }
@@ -522,6 +544,7 @@ class _$StartEvent implements StartEvent {
     TResult? Function(StopEvent value)? stop,
     TResult? Function(ToggleEvent value)? toggle,
     TResult? Function(ReadyEvent value)? ready,
+    TResult? Function(RefreshEvent value)? refresh,
   }) {
     return start?.call(this);
   }
@@ -535,6 +558,7 @@ class _$StartEvent implements StartEvent {
     TResult Function(StopEvent value)? stop,
     TResult Function(ToggleEvent value)? toggle,
     TResult Function(ReadyEvent value)? ready,
+    TResult Function(RefreshEvent value)? refresh,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -592,6 +616,7 @@ class _$StopEvent implements StopEvent {
     required TResult Function() stop,
     required TResult Function() toggle,
     required TResult Function() ready,
+    required TResult Function() refresh,
   }) {
     return stop();
   }
@@ -605,6 +630,7 @@ class _$StopEvent implements StopEvent {
     TResult? Function()? stop,
     TResult? Function()? toggle,
     TResult? Function()? ready,
+    TResult? Function()? refresh,
   }) {
     return stop?.call();
   }
@@ -618,6 +644,7 @@ class _$StopEvent implements StopEvent {
     TResult Function()? stop,
     TResult Function()? toggle,
     TResult Function()? ready,
+    TResult Function()? refresh,
     required TResult orElse(),
   }) {
     if (stop != null) {
@@ -635,6 +662,7 @@ class _$StopEvent implements StopEvent {
     required TResult Function(StopEvent value) stop,
     required TResult Function(ToggleEvent value) toggle,
     required TResult Function(ReadyEvent value) ready,
+    required TResult Function(RefreshEvent value) refresh,
   }) {
     return stop(this);
   }
@@ -648,6 +676,7 @@ class _$StopEvent implements StopEvent {
     TResult? Function(StopEvent value)? stop,
     TResult? Function(ToggleEvent value)? toggle,
     TResult? Function(ReadyEvent value)? ready,
+    TResult? Function(RefreshEvent value)? refresh,
   }) {
     return stop?.call(this);
   }
@@ -661,6 +690,7 @@ class _$StopEvent implements StopEvent {
     TResult Function(StopEvent value)? stop,
     TResult Function(ToggleEvent value)? toggle,
     TResult Function(ReadyEvent value)? ready,
+    TResult Function(RefreshEvent value)? refresh,
     required TResult orElse(),
   }) {
     if (stop != null) {
@@ -718,6 +748,7 @@ class _$ToggleEvent implements ToggleEvent {
     required TResult Function() stop,
     required TResult Function() toggle,
     required TResult Function() ready,
+    required TResult Function() refresh,
   }) {
     return toggle();
   }
@@ -731,6 +762,7 @@ class _$ToggleEvent implements ToggleEvent {
     TResult? Function()? stop,
     TResult? Function()? toggle,
     TResult? Function()? ready,
+    TResult? Function()? refresh,
   }) {
     return toggle?.call();
   }
@@ -744,6 +776,7 @@ class _$ToggleEvent implements ToggleEvent {
     TResult Function()? stop,
     TResult Function()? toggle,
     TResult Function()? ready,
+    TResult Function()? refresh,
     required TResult orElse(),
   }) {
     if (toggle != null) {
@@ -761,6 +794,7 @@ class _$ToggleEvent implements ToggleEvent {
     required TResult Function(StopEvent value) stop,
     required TResult Function(ToggleEvent value) toggle,
     required TResult Function(ReadyEvent value) ready,
+    required TResult Function(RefreshEvent value) refresh,
   }) {
     return toggle(this);
   }
@@ -774,6 +808,7 @@ class _$ToggleEvent implements ToggleEvent {
     TResult? Function(StopEvent value)? stop,
     TResult? Function(ToggleEvent value)? toggle,
     TResult? Function(ReadyEvent value)? ready,
+    TResult? Function(RefreshEvent value)? refresh,
   }) {
     return toggle?.call(this);
   }
@@ -787,6 +822,7 @@ class _$ToggleEvent implements ToggleEvent {
     TResult Function(StopEvent value)? stop,
     TResult Function(ToggleEvent value)? toggle,
     TResult Function(ReadyEvent value)? ready,
+    TResult Function(RefreshEvent value)? refresh,
     required TResult orElse(),
   }) {
     if (toggle != null) {
@@ -844,6 +880,7 @@ class _$ReadyEvent implements ReadyEvent {
     required TResult Function() stop,
     required TResult Function() toggle,
     required TResult Function() ready,
+    required TResult Function() refresh,
   }) {
     return ready();
   }
@@ -857,6 +894,7 @@ class _$ReadyEvent implements ReadyEvent {
     TResult? Function()? stop,
     TResult? Function()? toggle,
     TResult? Function()? ready,
+    TResult? Function()? refresh,
   }) {
     return ready?.call();
   }
@@ -870,6 +908,7 @@ class _$ReadyEvent implements ReadyEvent {
     TResult Function()? stop,
     TResult Function()? toggle,
     TResult Function()? ready,
+    TResult Function()? refresh,
     required TResult orElse(),
   }) {
     if (ready != null) {
@@ -887,6 +926,7 @@ class _$ReadyEvent implements ReadyEvent {
     required TResult Function(StopEvent value) stop,
     required TResult Function(ToggleEvent value) toggle,
     required TResult Function(ReadyEvent value) ready,
+    required TResult Function(RefreshEvent value) refresh,
   }) {
     return ready(this);
   }
@@ -900,6 +940,7 @@ class _$ReadyEvent implements ReadyEvent {
     TResult? Function(StopEvent value)? stop,
     TResult? Function(ToggleEvent value)? toggle,
     TResult? Function(ReadyEvent value)? ready,
+    TResult? Function(RefreshEvent value)? refresh,
   }) {
     return ready?.call(this);
   }
@@ -913,6 +954,7 @@ class _$ReadyEvent implements ReadyEvent {
     TResult Function(StopEvent value)? stop,
     TResult Function(ToggleEvent value)? toggle,
     TResult Function(ReadyEvent value)? ready,
+    TResult Function(RefreshEvent value)? refresh,
     required TResult orElse(),
   }) {
     if (ready != null) {
@@ -927,13 +969,144 @@ abstract class ReadyEvent implements MyPlayerEvent {
 }
 
 /// @nodoc
+abstract class _$$RefreshEventCopyWith<$Res> {
+  factory _$$RefreshEventCopyWith(
+          _$RefreshEvent value, $Res Function(_$RefreshEvent) then) =
+      __$$RefreshEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RefreshEventCopyWithImpl<$Res>
+    extends _$MyPlayerEventCopyWithImpl<$Res, _$RefreshEvent>
+    implements _$$RefreshEventCopyWith<$Res> {
+  __$$RefreshEventCopyWithImpl(
+      _$RefreshEvent _value, $Res Function(_$RefreshEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RefreshEvent implements RefreshEvent {
+  const _$RefreshEvent();
+
+  @override
+  String toString() {
+    return 'MyPlayerEvent.refresh()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RefreshEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String videoId, bool? playOn) init,
+    required TResult Function(String videoId) load,
+    required TResult Function() start,
+    required TResult Function() stop,
+    required TResult Function() toggle,
+    required TResult Function() ready,
+    required TResult Function() refresh,
+  }) {
+    return refresh();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String videoId, bool? playOn)? init,
+    TResult? Function(String videoId)? load,
+    TResult? Function()? start,
+    TResult? Function()? stop,
+    TResult? Function()? toggle,
+    TResult? Function()? ready,
+    TResult? Function()? refresh,
+  }) {
+    return refresh?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String videoId, bool? playOn)? init,
+    TResult Function(String videoId)? load,
+    TResult Function()? start,
+    TResult Function()? stop,
+    TResult Function()? toggle,
+    TResult Function()? ready,
+    TResult Function()? refresh,
+    required TResult orElse(),
+  }) {
+    if (refresh != null) {
+      return refresh();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitEvent value) init,
+    required TResult Function(LoadEvent value) load,
+    required TResult Function(StartEvent value) start,
+    required TResult Function(StopEvent value) stop,
+    required TResult Function(ToggleEvent value) toggle,
+    required TResult Function(ReadyEvent value) ready,
+    required TResult Function(RefreshEvent value) refresh,
+  }) {
+    return refresh(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitEvent value)? init,
+    TResult? Function(LoadEvent value)? load,
+    TResult? Function(StartEvent value)? start,
+    TResult? Function(StopEvent value)? stop,
+    TResult? Function(ToggleEvent value)? toggle,
+    TResult? Function(ReadyEvent value)? ready,
+    TResult? Function(RefreshEvent value)? refresh,
+  }) {
+    return refresh?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitEvent value)? init,
+    TResult Function(LoadEvent value)? load,
+    TResult Function(StartEvent value)? start,
+    TResult Function(StopEvent value)? stop,
+    TResult Function(ToggleEvent value)? toggle,
+    TResult Function(ReadyEvent value)? ready,
+    TResult Function(RefreshEvent value)? refresh,
+    required TResult orElse(),
+  }) {
+    if (refresh != null) {
+      return refresh(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefreshEvent implements MyPlayerEvent {
+  const factory RefreshEvent() = _$RefreshEvent;
+}
+
+/// @nodoc
 mixin _$MyPlayerState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() def,
     required TResult Function(YoutubePlayerController controller) init,
-    required TResult Function(bool playOn) toggle,
-    required TResult Function() refresh,
+    required TResult Function(bool playOn, Duration position) refresh,
     required TResult Function() ready,
   }) =>
       throw _privateConstructorUsedError;
@@ -941,8 +1114,7 @@ mixin _$MyPlayerState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? def,
     TResult? Function(YoutubePlayerController controller)? init,
-    TResult? Function(bool playOn)? toggle,
-    TResult? Function()? refresh,
+    TResult? Function(bool playOn, Duration position)? refresh,
     TResult? Function()? ready,
   }) =>
       throw _privateConstructorUsedError;
@@ -950,8 +1122,7 @@ mixin _$MyPlayerState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? def,
     TResult Function(YoutubePlayerController controller)? init,
-    TResult Function(bool playOn)? toggle,
-    TResult Function()? refresh,
+    TResult Function(bool playOn, Duration position)? refresh,
     TResult Function()? ready,
     required TResult orElse(),
   }) =>
@@ -960,7 +1131,6 @@ mixin _$MyPlayerState {
   TResult map<TResult extends Object?>({
     required TResult Function(DefState value) def,
     required TResult Function(InitState value) init,
-    required TResult Function(ToggleState value) toggle,
     required TResult Function(RefreshState value) refresh,
     required TResult Function(ReadyPlayerState value) ready,
   }) =>
@@ -969,7 +1139,6 @@ mixin _$MyPlayerState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(DefState value)? def,
     TResult? Function(InitState value)? init,
-    TResult? Function(ToggleState value)? toggle,
     TResult? Function(RefreshState value)? refresh,
     TResult? Function(ReadyPlayerState value)? ready,
   }) =>
@@ -978,7 +1147,6 @@ mixin _$MyPlayerState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DefState value)? def,
     TResult Function(InitState value)? init,
-    TResult Function(ToggleState value)? toggle,
     TResult Function(RefreshState value)? refresh,
     TResult Function(ReadyPlayerState value)? ready,
     required TResult orElse(),
@@ -1043,8 +1211,7 @@ class _$DefState implements DefState {
   TResult when<TResult extends Object?>({
     required TResult Function() def,
     required TResult Function(YoutubePlayerController controller) init,
-    required TResult Function(bool playOn) toggle,
-    required TResult Function() refresh,
+    required TResult Function(bool playOn, Duration position) refresh,
     required TResult Function() ready,
   }) {
     return def();
@@ -1055,8 +1222,7 @@ class _$DefState implements DefState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? def,
     TResult? Function(YoutubePlayerController controller)? init,
-    TResult? Function(bool playOn)? toggle,
-    TResult? Function()? refresh,
+    TResult? Function(bool playOn, Duration position)? refresh,
     TResult? Function()? ready,
   }) {
     return def?.call();
@@ -1067,8 +1233,7 @@ class _$DefState implements DefState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? def,
     TResult Function(YoutubePlayerController controller)? init,
-    TResult Function(bool playOn)? toggle,
-    TResult Function()? refresh,
+    TResult Function(bool playOn, Duration position)? refresh,
     TResult Function()? ready,
     required TResult orElse(),
   }) {
@@ -1083,7 +1248,6 @@ class _$DefState implements DefState {
   TResult map<TResult extends Object?>({
     required TResult Function(DefState value) def,
     required TResult Function(InitState value) init,
-    required TResult Function(ToggleState value) toggle,
     required TResult Function(RefreshState value) refresh,
     required TResult Function(ReadyPlayerState value) ready,
   }) {
@@ -1095,7 +1259,6 @@ class _$DefState implements DefState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(DefState value)? def,
     TResult? Function(InitState value)? init,
-    TResult? Function(ToggleState value)? toggle,
     TResult? Function(RefreshState value)? refresh,
     TResult? Function(ReadyPlayerState value)? ready,
   }) {
@@ -1107,7 +1270,6 @@ class _$DefState implements DefState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DefState value)? def,
     TResult Function(InitState value)? init,
-    TResult Function(ToggleState value)? toggle,
     TResult Function(RefreshState value)? refresh,
     TResult Function(ReadyPlayerState value)? ready,
     required TResult orElse(),
@@ -1190,8 +1352,7 @@ class _$InitState implements InitState {
   TResult when<TResult extends Object?>({
     required TResult Function() def,
     required TResult Function(YoutubePlayerController controller) init,
-    required TResult Function(bool playOn) toggle,
-    required TResult Function() refresh,
+    required TResult Function(bool playOn, Duration position) refresh,
     required TResult Function() ready,
   }) {
     return init(controller);
@@ -1202,8 +1363,7 @@ class _$InitState implements InitState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? def,
     TResult? Function(YoutubePlayerController controller)? init,
-    TResult? Function(bool playOn)? toggle,
-    TResult? Function()? refresh,
+    TResult? Function(bool playOn, Duration position)? refresh,
     TResult? Function()? ready,
   }) {
     return init?.call(controller);
@@ -1214,8 +1374,7 @@ class _$InitState implements InitState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? def,
     TResult Function(YoutubePlayerController controller)? init,
-    TResult Function(bool playOn)? toggle,
-    TResult Function()? refresh,
+    TResult Function(bool playOn, Duration position)? refresh,
     TResult Function()? ready,
     required TResult orElse(),
   }) {
@@ -1230,7 +1389,6 @@ class _$InitState implements InitState {
   TResult map<TResult extends Object?>({
     required TResult Function(DefState value) def,
     required TResult Function(InitState value) init,
-    required TResult Function(ToggleState value) toggle,
     required TResult Function(RefreshState value) refresh,
     required TResult Function(ReadyPlayerState value) ready,
   }) {
@@ -1242,7 +1400,6 @@ class _$InitState implements InitState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(DefState value)? def,
     TResult? Function(InitState value)? init,
-    TResult? Function(ToggleState value)? toggle,
     TResult? Function(RefreshState value)? refresh,
     TResult? Function(ReadyPlayerState value)? ready,
   }) {
@@ -1254,7 +1411,6 @@ class _$InitState implements InitState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DefState value)? def,
     TResult Function(InitState value)? init,
-    TResult Function(ToggleState value)? toggle,
     TResult Function(RefreshState value)? refresh,
     TResult Function(ReadyPlayerState value)? ready,
     required TResult orElse(),
@@ -1277,161 +1433,12 @@ abstract class InitState implements MyPlayerState {
 }
 
 /// @nodoc
-abstract class _$$ToggleStateCopyWith<$Res> {
-  factory _$$ToggleStateCopyWith(
-          _$ToggleState value, $Res Function(_$ToggleState) then) =
-      __$$ToggleStateCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool playOn});
-}
-
-/// @nodoc
-class __$$ToggleStateCopyWithImpl<$Res>
-    extends _$MyPlayerStateCopyWithImpl<$Res, _$ToggleState>
-    implements _$$ToggleStateCopyWith<$Res> {
-  __$$ToggleStateCopyWithImpl(
-      _$ToggleState _value, $Res Function(_$ToggleState) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? playOn = null,
-  }) {
-    return _then(_$ToggleState(
-      null == playOn
-          ? _value.playOn
-          : playOn // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ToggleState implements ToggleState {
-  const _$ToggleState(this.playOn);
-
-  @override
-  final bool playOn;
-
-  @override
-  String toString() {
-    return 'MyPlayerState.toggle(playOn: $playOn)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ToggleState &&
-            (identical(other.playOn, playOn) || other.playOn == playOn));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, playOn);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ToggleStateCopyWith<_$ToggleState> get copyWith =>
-      __$$ToggleStateCopyWithImpl<_$ToggleState>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() def,
-    required TResult Function(YoutubePlayerController controller) init,
-    required TResult Function(bool playOn) toggle,
-    required TResult Function() refresh,
-    required TResult Function() ready,
-  }) {
-    return toggle(playOn);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? def,
-    TResult? Function(YoutubePlayerController controller)? init,
-    TResult? Function(bool playOn)? toggle,
-    TResult? Function()? refresh,
-    TResult? Function()? ready,
-  }) {
-    return toggle?.call(playOn);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? def,
-    TResult Function(YoutubePlayerController controller)? init,
-    TResult Function(bool playOn)? toggle,
-    TResult Function()? refresh,
-    TResult Function()? ready,
-    required TResult orElse(),
-  }) {
-    if (toggle != null) {
-      return toggle(playOn);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(DefState value) def,
-    required TResult Function(InitState value) init,
-    required TResult Function(ToggleState value) toggle,
-    required TResult Function(RefreshState value) refresh,
-    required TResult Function(ReadyPlayerState value) ready,
-  }) {
-    return toggle(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DefState value)? def,
-    TResult? Function(InitState value)? init,
-    TResult? Function(ToggleState value)? toggle,
-    TResult? Function(RefreshState value)? refresh,
-    TResult? Function(ReadyPlayerState value)? ready,
-  }) {
-    return toggle?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(DefState value)? def,
-    TResult Function(InitState value)? init,
-    TResult Function(ToggleState value)? toggle,
-    TResult Function(RefreshState value)? refresh,
-    TResult Function(ReadyPlayerState value)? ready,
-    required TResult orElse(),
-  }) {
-    if (toggle != null) {
-      return toggle(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ToggleState implements MyPlayerState {
-  const factory ToggleState(final bool playOn) = _$ToggleState;
-
-  bool get playOn;
-  @JsonKey(ignore: true)
-  _$$ToggleStateCopyWith<_$ToggleState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 abstract class _$$RefreshStateCopyWith<$Res> {
   factory _$$RefreshStateCopyWith(
           _$RefreshState value, $Res Function(_$RefreshState) then) =
       __$$RefreshStateCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool playOn, Duration position});
 }
 
 /// @nodoc
@@ -1441,37 +1448,69 @@ class __$$RefreshStateCopyWithImpl<$Res>
   __$$RefreshStateCopyWithImpl(
       _$RefreshState _value, $Res Function(_$RefreshState) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? playOn = null,
+    Object? position = null,
+  }) {
+    return _then(_$RefreshState(
+      null == playOn
+          ? _value.playOn
+          : playOn // ignore: cast_nullable_to_non_nullable
+              as bool,
+      null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as Duration,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$RefreshState implements RefreshState {
-  const _$RefreshState();
+  const _$RefreshState(this.playOn, this.position);
+
+  @override
+  final bool playOn;
+  @override
+  final Duration position;
 
   @override
   String toString() {
-    return 'MyPlayerState.refresh()';
+    return 'MyPlayerState.refresh(playOn: $playOn, position: $position)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RefreshState);
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshState &&
+            (identical(other.playOn, playOn) || other.playOn == playOn) &&
+            (identical(other.position, position) ||
+                other.position == position));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, playOn, position);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RefreshStateCopyWith<_$RefreshState> get copyWith =>
+      __$$RefreshStateCopyWithImpl<_$RefreshState>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() def,
     required TResult Function(YoutubePlayerController controller) init,
-    required TResult Function(bool playOn) toggle,
-    required TResult Function() refresh,
+    required TResult Function(bool playOn, Duration position) refresh,
     required TResult Function() ready,
   }) {
-    return refresh();
+    return refresh(playOn, position);
   }
 
   @override
@@ -1479,11 +1518,10 @@ class _$RefreshState implements RefreshState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? def,
     TResult? Function(YoutubePlayerController controller)? init,
-    TResult? Function(bool playOn)? toggle,
-    TResult? Function()? refresh,
+    TResult? Function(bool playOn, Duration position)? refresh,
     TResult? Function()? ready,
   }) {
-    return refresh?.call();
+    return refresh?.call(playOn, position);
   }
 
   @override
@@ -1491,13 +1529,12 @@ class _$RefreshState implements RefreshState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? def,
     TResult Function(YoutubePlayerController controller)? init,
-    TResult Function(bool playOn)? toggle,
-    TResult Function()? refresh,
+    TResult Function(bool playOn, Duration position)? refresh,
     TResult Function()? ready,
     required TResult orElse(),
   }) {
     if (refresh != null) {
-      return refresh();
+      return refresh(playOn, position);
     }
     return orElse();
   }
@@ -1507,7 +1544,6 @@ class _$RefreshState implements RefreshState {
   TResult map<TResult extends Object?>({
     required TResult Function(DefState value) def,
     required TResult Function(InitState value) init,
-    required TResult Function(ToggleState value) toggle,
     required TResult Function(RefreshState value) refresh,
     required TResult Function(ReadyPlayerState value) ready,
   }) {
@@ -1519,7 +1555,6 @@ class _$RefreshState implements RefreshState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(DefState value)? def,
     TResult? Function(InitState value)? init,
-    TResult? Function(ToggleState value)? toggle,
     TResult? Function(RefreshState value)? refresh,
     TResult? Function(ReadyPlayerState value)? ready,
   }) {
@@ -1531,7 +1566,6 @@ class _$RefreshState implements RefreshState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DefState value)? def,
     TResult Function(InitState value)? init,
-    TResult Function(ToggleState value)? toggle,
     TResult Function(RefreshState value)? refresh,
     TResult Function(ReadyPlayerState value)? ready,
     required TResult orElse(),
@@ -1544,7 +1578,14 @@ class _$RefreshState implements RefreshState {
 }
 
 abstract class RefreshState implements MyPlayerState {
-  const factory RefreshState() = _$RefreshState;
+  const factory RefreshState(final bool playOn, final Duration position) =
+      _$RefreshState;
+
+  bool get playOn;
+  Duration get position;
+  @JsonKey(ignore: true)
+  _$$RefreshStateCopyWith<_$RefreshState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1587,8 +1628,7 @@ class _$ReadyPlayerState implements ReadyPlayerState {
   TResult when<TResult extends Object?>({
     required TResult Function() def,
     required TResult Function(YoutubePlayerController controller) init,
-    required TResult Function(bool playOn) toggle,
-    required TResult Function() refresh,
+    required TResult Function(bool playOn, Duration position) refresh,
     required TResult Function() ready,
   }) {
     return ready();
@@ -1599,8 +1639,7 @@ class _$ReadyPlayerState implements ReadyPlayerState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? def,
     TResult? Function(YoutubePlayerController controller)? init,
-    TResult? Function(bool playOn)? toggle,
-    TResult? Function()? refresh,
+    TResult? Function(bool playOn, Duration position)? refresh,
     TResult? Function()? ready,
   }) {
     return ready?.call();
@@ -1611,8 +1650,7 @@ class _$ReadyPlayerState implements ReadyPlayerState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? def,
     TResult Function(YoutubePlayerController controller)? init,
-    TResult Function(bool playOn)? toggle,
-    TResult Function()? refresh,
+    TResult Function(bool playOn, Duration position)? refresh,
     TResult Function()? ready,
     required TResult orElse(),
   }) {
@@ -1627,7 +1665,6 @@ class _$ReadyPlayerState implements ReadyPlayerState {
   TResult map<TResult extends Object?>({
     required TResult Function(DefState value) def,
     required TResult Function(InitState value) init,
-    required TResult Function(ToggleState value) toggle,
     required TResult Function(RefreshState value) refresh,
     required TResult Function(ReadyPlayerState value) ready,
   }) {
@@ -1639,7 +1676,6 @@ class _$ReadyPlayerState implements ReadyPlayerState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(DefState value)? def,
     TResult? Function(InitState value)? init,
-    TResult? Function(ToggleState value)? toggle,
     TResult? Function(RefreshState value)? refresh,
     TResult? Function(ReadyPlayerState value)? ready,
   }) {
@@ -1651,7 +1687,6 @@ class _$ReadyPlayerState implements ReadyPlayerState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DefState value)? def,
     TResult Function(InitState value)? init,
-    TResult Function(ToggleState value)? toggle,
     TResult Function(RefreshState value)? refresh,
     TResult Function(ReadyPlayerState value)? ready,
     required TResult orElse(),

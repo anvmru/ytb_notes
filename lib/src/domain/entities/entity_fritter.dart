@@ -4,7 +4,7 @@ class EntityFritter {
   EntityFritter({
     this.id,
     this.videoId,
-    this.begin = 0,
+    this.begin = const Duration(milliseconds: 0),
     this.length = 0,
     this.index = 0,
     this.note,
@@ -17,7 +17,7 @@ class EntityFritter {
   String? videoId;
 
   // Начало
-  int begin;
+  Duration begin;
 
   // Длина
   int length;

@@ -43,7 +43,6 @@ class _PlayerWidgetState extends State<PlayerWidget> {
       bloc: bloc,
       listener: (_, state) => state.mapOrNull(
         init: (state) => _controller = state.controller,
-        toggle: (state) {},
         refresh: (state) {},
       ),
       child: _controller == null

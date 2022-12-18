@@ -15,6 +15,7 @@ class MyPlayerEvent with _$MyPlayerEvent {
   const factory MyPlayerEvent.stop() = StopEvent;
   const factory MyPlayerEvent.toggle() = ToggleEvent;
   const factory MyPlayerEvent.ready() = ReadyEvent;
+  const factory MyPlayerEvent.refresh() = RefreshEvent;
 }
 
 @freezed
@@ -22,8 +23,8 @@ class MyPlayerState with _$MyPlayerState {
   const factory MyPlayerState.def() = DefState;
   const factory MyPlayerState.init(YoutubePlayerController controller) =
       InitState;
-  const factory MyPlayerState.toggle(bool playOn) = ToggleState;
-  const factory MyPlayerState.refresh() = RefreshState;
+  const factory MyPlayerState.refresh(bool playOn, Duration position) =
+      RefreshState;
   const factory MyPlayerState.ready() = ReadyPlayerState;
 }
 
@@ -35,14 +36,43 @@ class MyPlayerBloc extends Bloc<MyPlayerEvent, MyPlayerState> {
     on<StopEvent>(_onStopEvent);
     on<ToggleEvent>(_onToggleEvent);
     on<ReadyEvent>(_onReadyEvent);
+    on<RefreshEvent>(_onRefreshEvent);
   }
 
   bool _isPlayerReady = false;
   bool _playOn = true;
   YoutubePlayerController? _controller;
   YoutubePlayerController? get controller => _controller;
+  PlayerState _playerState = PlayerState.unknown;
+  Duration _position = const Duration(milliseconds: 0);
 
-  void listener() {}
+  void listener() {
+    _position = _controller!.value.position;
+    _playerState = _controller!.value.playerState;
+    print('** playerState: $_playerState. pos:${_position.toString()}');
+    // Если было проигрывание и оно остановилось
+    if (_playOn &&
+        {
+          PlayerState.paused,
+          PlayerState.ended,
+          PlayerState.unStarted,
+          PlayerState.unknown
+        }.contains(_playerState)) {
+      _playOn = false;
+      add(const MyPlayerEvent.refresh());
+    }
+    // Если была остановка и началось воспроизведение
+    if (!_playOn &&
+        {
+          PlayerState.playing,
+          PlayerState.buffering,
+          PlayerState.cued,
+          PlayerState.unknown
+        }.contains(_playerState)) {
+      _playOn = true;
+      add(const MyPlayerEvent.refresh());
+    }
+  }
 
   Future<void> _onInitEvent(
       InitEvent event, Emitter<MyPlayerState> emit) async {
@@ -89,7 +119,6 @@ class MyPlayerBloc extends Bloc<MyPlayerEvent, MyPlayerState> {
     if (_isPlayerReady && !_playOn) {
       _playOn = true;
       _controller?.play();
-      emit.call(const MyPlayerState.refresh());
     }
   }
 
@@ -98,23 +127,26 @@ class MyPlayerBloc extends Bloc<MyPlayerEvent, MyPlayerState> {
     if (_isPlayerReady && _playOn) {
       _playOn = false;
       _controller?.pause();
-      emit.call(const MyPlayerState.refresh());
     }
   }
 
   Future<void> _onToggleEvent(
       ToggleEvent event, Emitter<MyPlayerState> emit) async {
     if (_playOn) {
-      _onStopEvent(const StopEvent(), emit);
+      add(const MyPlayerEvent.stop());
     } else {
-      _onStartEvent(const StartEvent(), emit);
+      add(const MyPlayerEvent.start());
     }
-    emit.call(MyPlayerState.toggle(_playOn));
   }
 
   Future<void> _onReadyEvent(
       ReadyEvent event, Emitter<MyPlayerState> emit) async {
     _isPlayerReady = true;
     emit.call(const MyPlayerState.ready());
+  }
+
+  FutureOr<void> _onRefreshEvent(
+      RefreshEvent event, Emitter<MyPlayerState> emit) {
+    emit.call(MyPlayerState.refresh(_playOn, _position));
   }
 }

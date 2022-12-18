@@ -44,12 +44,10 @@ class _Line extends StatelessWidget {
             bottom: BorderSide(color: Colors.grey.withOpacity(0.5), width: 1)),
       ),
       child: Row(
-        children: const [
-          Text("Начало"),
-          SizedBox(width: 10),
-          Text("Длина"),
-          SizedBox(width: 10),
-          Text("Порядок"),
+        children: [
+          Text("Начало: ${fritter.begin.toString()}"),
+          const Expanded(child: SizedBox(width: 10)),
+          const Icon(Icons.menu),
         ],
       ),
     );
